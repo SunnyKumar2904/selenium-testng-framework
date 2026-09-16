@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ducat</groupId>
+  <artifactId>crm_app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>crm_app</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Java 25 LTS - security updates until Sept 2030.
+         Requires Temurin/OpenJDK 25 registered under Eclipse Preferences > Java >
+         Installed JREs. Never raise this above the JDK actually installed: doing so
+         makes the build stop producing .class files with no obvious error. -->
+    <maven.compiler.release>25</maven.compiler.release>
+
+    <selenium.version>4.47.0</selenium.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.15.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+  
+  <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
+	<dependency>
+    	<groupId>org.testng</groupId>
+   		<artifactId>testng</artifactId>
+    	<version>7.12.0</version>
+    	<scope>test</scope>
+	</dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.catools</groupId>
+    	<artifactId>extentreport</artifactId>
+    	<version>1.0.1</version>
+    	<scope>compile</scope>
+	</dependency>
+  </dependencies>
+
+</project>
